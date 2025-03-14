@@ -12,6 +12,7 @@ for i in range(C):
   for case in test_case[1:]:
     if case > avg:
       over_avg += 1
+# 포맷팅 주의
   print("%0.3f%%" %((over_avg / students_pax) * 100))
 
 
