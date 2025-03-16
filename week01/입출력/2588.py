@@ -15,3 +15,14 @@ print(first * second_digit[-2])
 print(first * second_digit[-3])
 # 6 -> (1) * (2)의 곱셈 연산 값
 print(first * second)
+
+
+#### 단순
+
+a = int(input())  
+b = input()
+
+print(a*int(b[2]))
+print(a*int(b[1]))
+print(a*int(b[0]))
+print(a*int(b))
