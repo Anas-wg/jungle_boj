@@ -6,9 +6,10 @@ def move(N ,start, end):
 def hanoi(N, start, end, sub):
   if N == 1:
     move(N, start, end)
+    return
   else:
     hanoi(N - 1, start, end, sub)
     move(N, start, end)
     hanoi(N - 1, sub, end, start)
   
-hanoi(3, "A", "B", "C")
+hanoi(3, "A", "C", "B")
