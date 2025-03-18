@@ -1,20 +1,20 @@
 # # 조합 라이브러리 활용
-# from itertools import combinations
+from itertools import combinations
 
-# smalls = []
+smalls = []
 
-# for i in range(9):
-#   smalls.append(int(input()))
+for i in range(9):
+  smalls.append(int(input()))
 
 
-# seven_smalls = list(map(list, combinations(smalls, 7)))
+seven_smalls = list(map(list, combinations(smalls, 7)))
 
-# for case in seven_smalls:
-#   if sum(case) == 100:
-#     case.sort()
-#     for elems in case:
-#       print(elems)
-#     break
+for case in seven_smalls:
+  if sum(case) == 100:
+    case.sort()
+    for elems in case:
+      print(elems)
+    break
 
 
 # 완전탐색 => 9명의 합을 구해서 2명의 키를 제함
