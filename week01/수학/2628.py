@@ -1,6 +1,6 @@
 x, y = map(int, input().split())
 x_list = [0, x] # 가로 각각의 길이
-y_list = [0, y] # 세로 각각 길이ㅏ
+y_list = [0, y] # 세로 각각 길이
 
 for _ in range(int(input())):
   xy, length = map(int, input().split())
