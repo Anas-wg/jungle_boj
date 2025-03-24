@@ -8,12 +8,15 @@ const input = fs.readFileSync('input.txt').toString().trim()
 
 let N = parseInt(input)
 
+// console.log는 시간 초과가 날 수 있다
+let result = []; // 결과 출력용 배열
+
 function hanoi(N, start, end, sub) {
   if (N == 1) {
-    console.log(start, end)
+    result.push(`${start} ${end}`)
   } else {
     hanoi(N - 1, start, sub, end)
-    console.log(start, end)
+    result.push(`${start} ${end}`)
     hanoi(N - 1, sub, end, start)
   }
 }
@@ -21,5 +24,6 @@ function hanoi(N, start, end, sub) {
 console.log((BigInt(2) ** BigInt(N) - BigInt(1)).toString());
 
 if (N <= 20) {
-  hanoi(N, 1, 3, 2)
+  hanoi(N, 1, 3, 2);
+  console.log(result.join('\n'))
 }
