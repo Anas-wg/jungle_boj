@@ -76,6 +76,3 @@ class LinkedList:
         self.current = pre
         self.no -= 1
 
-def remove(self, p:Node):
-  
-
