@@ -31,4 +31,3 @@ dfs(1, graph, visited)
 for elems in parent[2:]:
   print(elems)
 
-
