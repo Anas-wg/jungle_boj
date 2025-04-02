@@ -33,7 +33,7 @@ def bfs(x, y):
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
-
+            
             if 0 <= nx < n and 0 <= ny < m and graph[nx][ny] == 1:
                 queue.append((nx, ny))
                 graph[nx][ny] = graph[x][y] + 1

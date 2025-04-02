@@ -5,6 +5,7 @@
 import sys
 input = sys.stdin.readline
 sys.setrecursionlimit(10**6)
+
 N = int(input())
 graph = [[]for _ in range(N + 1)]
 visited = [False] * (N + 1)
