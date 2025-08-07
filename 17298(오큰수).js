@@ -1,29 +1,21 @@
 const fs = require("fs");
 const input = fs.readFileSync('input.txt').toString().split('\n');
 // const input = fs.readFileSync('/dev/stdin').toString().split('\n');
-let N = parseInt(input[0])
-let seq = input[1].split(' ').map(Number);
+const N = Number(input[0]);
+const arr = input[1].split(" ").map(e => Number(e));
 
-let result = [];
-for (let i = 0; i < N; i++) {
-  let a_i = seq[i];
-  let seq_right = seq.slice(i + 1,).filter((elem) => elem > a_i);
-  // console.log(seq_right);
-  // let seq_right = [...seq].filter((elem) => elem > a_i);
+// 정답 배열 초기화
+let answer = Array.from({ length: N }, () => -1);
+let stack = [0];
 
-  if (seq_right.length == 0) {
-    result.push(-1);
-    continue;
+// 원소의 idx stack push
+// top보다 작으면 오큰수 X => idx push
+// top 보다 크면 오큰수 O => 자신보다 큰 수들 pop 하고 자신 추가
+for (let i = 1; i < N; i++) {
+  while (arr[stack[stack.length - 1]] < arr[i] && stack.length) {
+    answer[stack.pop()] = arr[i];
   }
-
-  seq_right.sort((a, b) => a - b);
-
-  if (a_i < seq_right[0]) {
-    result.push(seq_right[0]);
-  } else {
-    result.push(-1)
-  }
+  stack.push(i);
 }
 
-console.log(result.join(' '))
-
+console.log(answer.join(" "));
